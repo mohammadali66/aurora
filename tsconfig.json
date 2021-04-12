@@ -11,6 +11,16 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "paths": {
+      "sdfefffs": [
+        "dist/sdfefffs/sdfefffs",
+        "dist/sdfefffs"
+      ],
+      "select2-aurora": [
+        "dist/select2-aurora/select2-aurora",
+        "dist/select2-aurora"
+      ]
+    },
     "module": "es2020",
     "lib": [
       "es2018",
