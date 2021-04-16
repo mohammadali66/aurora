@@ -1,0 +1,47 @@
+<!-- ------------------------------ error ---------------------------------- -->
+<ng-container *ngIf="errorMessage">
+  <div class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+</ng-container>
+
+<!-- ------------------------------ correct -------------------------------- -->
+<ng-container *ngIf="errorMessage == ''">
+  <div class="dropdown">
+    <span [ngClass]="displayFieldCss()" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ selectedItem.label }}
+      <i class="fa fa-caret-down arrow-icon"></i>
+    </span>
+    <div class="dropdown-menu width100" aria-labelledby="dropdownMenuButton">
+      <!-- ------------------------- search input -------------------------- -->
+      <div class="search">
+        <input
+          class="form-control"
+          type="search"
+          autocomplete="off"
+          [formControl]="searchTextNasimFormControl"
+        >
+        <span class="fa fa-search"></span>
+      </div>
+
+      <!-- ------------------------ option list ---------------------------- -->
+      <div class="option-list scrollbar-aurora" *ngIf="optionList2.length != 0">
+        <!-- don not use hyperlink -->
+        <button
+          type="button"
+          class="dropdown-item option-item"
+          *ngFor="let item of optionList2"
+          (click)="onSelectItem(item)"
+          [innerHtml]="item.label"
+        >
+        </button>
+      </div>
+      <div class="no-matches" *ngIf="optionList2.length == 0">
+        <span>
+          no matches found
+        </span>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
