@@ -13,7 +13,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Add these libraries in your angular.json file
 
 ~~~json
-nbnb
+"styles": [
+    "projects/front-end/src/styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "./node_modules/font-awesome/css/font-awesome.css"
+],
+"scripts": [
+   "./node_modules/jquery/dist/jquery.min.js",
+   "./node_modules/popper.js/dist/umd/popper.min.js",
+   "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
 ~~~
 
 ## Development server
