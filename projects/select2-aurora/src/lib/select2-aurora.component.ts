@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, FormControl, ControlValueAccessor } from '@angular/forms';
 import {Observable} from 'rxjs';
 
 import { AuroraSelectModel } from './models';
@@ -10,10 +10,19 @@ import { MainService } from './services/main.service';
   selector: 'select2-aurora',
   templateUrl: './select2-aurora.component.html',
   styleUrls: ['./select2-aurora.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => Select2AuroraComponent),
+      multi: true
+    }
+  ]
 })
-export class Select2AuroraComponent implements OnInit {
+export class Select2AuroraComponent implements ControlValueAccessor, OnInit {
 
-  @Input() formControl: FormControl = new FormControl();
+  @Input() name: string;
+  @Input('value') val: string;
+
   @Input() optionList: Array<AuroraSelectModel> = new Array<AuroraSelectModel>();
   @Input() apiUrl = '';
   @Input() jwtToken = '';
@@ -41,6 +50,80 @@ export class Select2AuroraComponent implements OnInit {
   }
 
   // ...........................................................................
+  /*
+  * for ControlValueAccessor
+  */
+  onChange: any = () => {};
+  // ...........................................................................
+
+  /*
+  * for ControlValueAccessor
+  */
+  onTouched: any = () => { };
+  // ...........................................................................
+
+  /*
+  * for ControlValueAccessor
+  */
+  get value()
+  {
+    return this.val;
+  }
+
+  // ...........................................................................
+  /*
+  * for ControlValueAccessor
+  */
+  set value(val)
+  {
+    this.val = val;
+    if(this.val) {
+      for(let item of this.optionList){
+        if(this.val == item.id){
+          this.selectedItem = item;
+          break;
+        }
+      }
+    }
+
+    this.onChange(val);
+    this.onTouched();
+  }
+
+  // ...........................................................................
+  /*
+  * for ControlValueAccessor
+  */
+  registerOnChange(fn) {
+    this.onChange = fn;
+  }
+
+  // ...........................................................................
+  /*
+  * for ControlValueAccessor
+  */
+  registerOnTouched(fn)
+  {
+    this.onTouched = fn;
+  }
+
+  // ...........................................................................
+  /*
+  * for ControlValueAccessor
+  */
+  writeValue(value) {
+    if (value) {
+      this.value = value;
+    }
+  }
+
+  // ...........................................................................
+  // call this function when isDisabled == true
+  // setDisabledState(isDisabled: boolean): void {
+  //   this.isDisabled = isDisabled;
+  // }
+
+  // ...........................................................................
   initializeComponent()
   {
     this.errorMessage = '';
@@ -51,15 +134,15 @@ export class Select2AuroraComponent implements OnInit {
   // ...........................................................................
   initSelectedItem()
   {
-    if(!this.formControl.value) {
-      return;
-    }
-    for(let item of this.optionList){
-      if(this.formControl.value == item.id){
-        this.selectedItem = item;
-        break;
-      }
-    }
+    // if(!this.formControl.value) {
+    //   return;
+    // }
+    // for(let item of this.optionList){
+    //   if(this.formControl.value == item.id){
+    //     this.selectedItem = item;
+    //     break;
+    //   }
+    // }
   }
 
   // ...........................................................................
@@ -203,7 +286,9 @@ export class Select2AuroraComponent implements OnInit {
     for(let item2 of this.optionList){
       if(item.id === item2.id){
         this.selectedItem = item2;
-        this.formControl.setValue(this.selectedItem.id);
+        // this.formControl.setValue(this.selectedItem.id);
+        // this.val = this.selectedItem.id;
+        this.writeValue(this.selectedItem.id);
         break;
       }
     }

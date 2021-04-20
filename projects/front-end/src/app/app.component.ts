@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 import { AuroraSelectModel } from 'projects/select2-aurora/src/lib/models';
 
@@ -13,14 +14,30 @@ export class AppComponent implements OnInit {
   title = 'front-end';
   optionList: Array<AuroraSelectModel> = new Array<AuroraSelectModel>();
   apiUrl = 'dsfdf';
+  fc1: FormControl = new FormControl(10);
+  formGroup: FormGroup;
 
   //............................................................................
-  constructor(){}
+  constructor(private formBuilder: FormBuilder){}
 
   //............................................................................
   ngOnInit()
   {
+    this.createForm();
     this.initOptionList();
+  }
+
+  //............................................................................
+  createForm()
+  {
+    this.formGroup = this.formBuilder.group({
+      fc2: new FormControl(2)
+    })
+  }
+  //............................................................................
+  onSave()
+  {
+    console.log(this.formGroup.controls['fc2'].value);
   }
 
   //............................................................................
