@@ -1,6 +1,12 @@
 # Aurora
+ Auther | Mohammad Ali Khandan, Mohsen Abedi 
+------------ | -------------
+Maintainer | Aurora developers group
+License | MIT License
+Status | Stable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
+
+Aurora is a Free Bootstrap 4 UI Kit with a fresh, new design inspired by Bootstrap and Angular. We need it, so we built it; And share it with others.It's a great pleasure to introduce to you the Aurora in an easy to use and beautiful set of components. Along with the restyling of the Bootstrap elements, you will find some fully-coded example pages, to help you design your next project.
 
 ## Dependencies
 
