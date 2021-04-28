@@ -179,7 +179,7 @@ export class Select2AuroraComponent implements ControlValueAccessor, OnInit {
       this.callAPIAuth();
     }
     else{
-      // console.log('no auth');
+      console.log('no auth');
       this.callAPINoAuth();
     }
   }

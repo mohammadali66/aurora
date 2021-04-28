@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   title = 'front-end';
   optionList: Array<AuroraSelectModel> = new Array<AuroraSelectModel>();
-  apiUrl = 'dsfdf';
+  apiUrl = 'http://127.0.0.1:8000/view1/';
   fc1: FormControl = new FormControl(10);
   formGroup: FormGroup;
 
