@@ -1,4 +1,8 @@
 // @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "node_modules/bootstrap/scss/bootstrap";
+// @import 'node_modules/bootstrap/js/dist/util';
+// @import 'node_modules/bootstrap/js/dist/dropdown';
+// @import "node_modules/jquery"
 
 :host {
   --border-color: #ced4da;
@@ -17,11 +21,11 @@
   word-break: break-all;
 }
 
-.arrow-icon {
-  margin: 3px 13px 3px 3px;
-  float: right;
-  color: #767676;
-}
+// .arrow-icon {
+//   margin: 3px 13px 3px 3px;
+//   float: right;
+//   color: #767676;
+// }
 
 .option-list {
   overflow-y: auto;
@@ -89,4 +93,10 @@
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: var(--border-color);
+}
+
+.dropdown-toggle::after {
+  margin: 4px 3px 0 3px;
+  float: right;
+  color: #767676;
 }

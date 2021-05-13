@@ -12,6 +12,10 @@
     "importHelpers": true,
     "target": "es2015",
     "paths": {
+      "main-aurora": [
+        "dist/main-aurora/main-aurora",
+        "dist/main-aurora"
+      ],
       "select2-aurora": [
         "dist/select2-aurora/select2-aurora",
         "dist/select2-aurora"

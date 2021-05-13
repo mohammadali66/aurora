@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
+import { MainAuroraModule } from 'main-aurora';
 import { Select2AuroraComponent } from './select2-aurora.component';
 
 
@@ -15,7 +17,9 @@ import { Select2AuroraComponent } from './select2-aurora.component';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    MainAuroraModule
   ],
   exports: [
     Select2AuroraComponent

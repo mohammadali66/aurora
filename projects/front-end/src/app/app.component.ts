@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
-import { AuroraSelectModel } from 'projects/select2-aurora/src/lib/models';
+// import { AuroraSelectModel } from 'projects/select2-aurora/src/lib/models';
+// import { AuroraSelectModel } from 'select2-aurora';
+import { AuroraSelectModel } from 'projects/select2-aurora/src/lib/select2-aurora.component';
 
 
 @Component({

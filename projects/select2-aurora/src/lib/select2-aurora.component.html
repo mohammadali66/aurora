@@ -7,12 +7,12 @@
 
 <!-- ------------------------------ correct -------------------------------- -->
 <ng-container *ngIf="errorMessage == ''">
-  <div class="dropdown">
-    <span [ngClass]="displayFieldCss()" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div ngbDropdown class="dropdown">
+    <span [ngClass]="displayFieldCss()" type="button" id="dropdownMenuButton" ngbDropdownToggle>
       {{ selectedItem.label }}
-      <i class="fa fa-caret-down arrow-icon"></i>
+      <!-- <i class="fa fa-caret-down arrow-icon"></i> -->
     </span>
-    <div class="dropdown-menu width100" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu width100" aria-labelledby="dropdownMenuButton" ngbDropdownMenu>
       <!-- ------------------------- search input -------------------------- -->
       <div class="search">
         <input
@@ -33,6 +33,7 @@
           *ngFor="let item of optionList2"
           (click)="onSelectItem(item)"
           [innerHtml]="item.label"
+          ngbDropdownItem
         >
         </button>
       </div>
