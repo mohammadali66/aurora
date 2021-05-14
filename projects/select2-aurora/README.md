@@ -87,23 +87,105 @@ Then you can define _select2-aurora_ in your template.
 </select2-aurora>
 ```
 
-## Code scaffolding
+## Using select2-aurora in a form
 
-Run `ng generate component component-name --project select2-aurora` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project select2-aurora`.
-> Note: Don't forget to add `--project select2-aurora` or else it will be added to the default project in your `angular.json` file.
+You can use _select2-aurora_ in a form. Here we have an example
 
-## Build
+```typescript
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { AuroraSelectModel } from 'select2-aurora';
 
-Run `ng build select2-aurora` to build the project. The build artifacts will be stored in the `dist/` directory.
+export class AppComponent implements OnInit {
+  countriesList: Array<AuroraSelectModel> = new Array<AuroraSelectModel>();  
+  formGroup: FormGroup;
 
-## Publishing
+  constructor(private formBuilder: FormBuilder)
+  {}
 
-After building your library with `ng build select2-aurora`, go to the dist folder `cd dist/select2-aurora` and run `npm publish`.
+  ngOnInit()
+  {
+    this.initOptionList();
+    this.createForm();
+  }
 
-## Running unit tests
+  createForm()
+  {
+    this.formGroup = this.formBuilder.group({
+      countryFC: new FormControl()
+    });
+  }
 
-Run `ng test select2-aurora` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  initOptionList()
+  {
+    // as previous example
+  }
 
-## Further help
+  onSaveForm()
+  {
+    console.log(this.formGroup.value);
+  }
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+
+You can set a default value for form control.
+
+```typescript
+this.formGroup = this.formBuilder.group({
+  countryFC: new FormControl(2)
+});
+```
+
+in template
+
+```html
+<form [formGroup]="formGroup" (ngSubmit)="onSaveForm()">
+  <span>Countries:</span>
+  <select2-aurora
+    formControlName="countryFC"
+    [optionList]="countriesList"
+  >
+  </select2-aurora>
+  <br>
+
+  <button type="submit" name="button">Save</button>
+</form>
+```
+
+## API service
+
+You can fill the options list with an API service.
+
+```typescript
+apiUrl = 'http://127.0.0.1:8000/view1/';
+```
+
+```html
+<select2-aurora
+  formControlName="countryFC"
+  [apiUrl]="apiUrl"
+>
+</select2-aurora>
+```
+
+If your API has JWT token, then you can pass your token to this module
+
+```typescript
+apiUrl = 'http://127.0.0.1:8000/view1/';
+jwtToken = 'dfsdfe3423i4jfhsdjnvsjhr3h4j23h4j23h4j232j4';
+```
+
+```html
+<select2-aurora
+  formControlName="countryFC"
+  [apiUrl]="apiUrl"
+  [jwtToken]="jwtToken"
+>
+</select2-aurora>
+```
+
+If you use both _optionList_ and _apiUrl_ simultaneous, the module just use _apiUrl_.
+
+## Source code
+
+The project is open source, and you can access to source code [here](https://github.com/mohammadali66/aurora/tree/master/projects/select2-aurora)
