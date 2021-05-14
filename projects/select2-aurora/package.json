@@ -1,16 +1,14 @@
 {
   "name": "select2-aurora",
-  "version": "0.1.11",
+  "version": "0.1.19",
   "peerDependencies": {
     "@angular/common": "^11.2.8",
     "@angular/core": "^11.2.8",
     "bootstrap": "^4.6.0",
-    "@ng-bootstrap/ng-bootstrap": "^9.1.0",
-    "main-aurora": "^0.0.1"
+    "@ng-bootstrap/ng-bootstrap": "^9.1.0"
   },
   "dependencies": {
     "tslib": "^2.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^9.1.0",
-    "main-aurora": "^0.0.1"
+    "@ng-bootstrap/ng-bootstrap": "^9.1.0"
   }
 }

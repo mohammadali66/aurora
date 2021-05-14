@@ -6,7 +6,6 @@
   },
   "allowedNonPeerDependencies": [
     "tslib",
-    "@ng-bootstrap/ng-bootstrap",
-    "main-aurora",
+    "@ng-bootstrap/ng-bootstrap"
   ]
 }
