@@ -189,3 +189,10 @@ If you use both _optionList_ and _apiUrl_ simultaneous, the module just use _api
 ## Source code
 
 The project is open source, and you can access to source code [here](https://github.com/mohammadali66/aurora/tree/master/projects/select2-aurora)
+
+## Legal
+Copyright (C) 2020-2021 Mohammad Ali Khandan
+
+Copyright (C) 2020-2021 AuroraBook
+
+This software is licensed under the MIT License.
