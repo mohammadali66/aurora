@@ -324,6 +324,7 @@ export class Select2AuroraComponent implements ControlValueAccessor, OnInit {
   displayFieldCss()
   {
     return 'main-btn rounded';
+    // return 'form-control'
 
     // if(this.isFieldInvalid()){
     //   return 'main-btn rounded' + ' invalid-span';

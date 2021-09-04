@@ -12,9 +12,13 @@
     "importHelpers": true,
     "target": "es2015",
     "paths": {
-      "main-aurora": [
+      "main-aurora": [        
         "dist/main-aurora/main-aurora",
         "dist/main-aurora"
+      ],
+      "many-to-many-aurora": [
+        "dist/many-to-many-aurora/many-to-many-aurora",
+        "dist/many-to-many-aurora"
       ],
       "select2-aurora": [
         "dist/select2-aurora/select2-aurora",

@@ -161,6 +161,86 @@
           }
         }
       }
+    },
+    "many-to-many-aurora": {
+      "projectType": "library",
+      "root": "projects/many-to-many-aurora",
+      "sourceRoot": "projects/many-to-many-aurora/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/many-to-many-aurora/tsconfig.lib.json",
+            "project": "projects/many-to-many-aurora/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/many-to-many-aurora/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/many-to-many-aurora/src/test.ts",
+            "tsConfig": "projects/many-to-many-aurora/tsconfig.spec.json",
+            "karmaConfig": "projects/many-to-many-aurora/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/many-to-many-aurora/tsconfig.lib.json",
+              "projects/many-to-many-aurora/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "main-aurora": {
+      "projectType": "library",
+      "root": "projects/main-aurora",
+      "sourceRoot": "projects/main-aurora/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/main-aurora/tsconfig.lib.json",
+            "project": "projects/main-aurora/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/main-aurora/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/main-aurora/src/test.ts",
+            "tsConfig": "projects/main-aurora/tsconfig.spec.json",
+            "karmaConfig": "projects/main-aurora/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/main-aurora/tsconfig.lib.json",
+              "projects/main-aurora/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "select2-aurora"

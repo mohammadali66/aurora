@@ -1,6 +1,10 @@
 # select2-aurora
 
+Select2-aurora is a new implementation for Select Control Form. In this module, you are able to add options list just like before. It is possible to search in list. In order to get information from an API server, the output of your service must be a list with two components of _id_ and _label_. In this way, _optionList_ will be fulfilled automatically and set in module.
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+
+<img src="https://i.ibb.co/pPc0Qf0/select2-aurora.gif" alt="select2-aurora" border="0" width="400">
 
 ## Installation
 
@@ -16,7 +20,7 @@ for a special version run
 npm i select2-aurora@1.0.0
 ```
 
-After install the package, you must add _Select2AuroraModule_ in _app.modules.ts_
+After the package Installation, you must add _Select2AuroraModule_ in _app.modules.ts_
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -38,13 +42,13 @@ import { Select2AuroraModule } from 'select2-aurora';       // <-- here
 export class AppModule { }
 ```
 
-## How to use package with option list
+## How to use package with the optionList property
 
-We define a model named _AuroraSelectModel_ in select2-aurora.
-You can prepare your list with this model.
-First of all import _AuroraSelectModel_ in your component.
-Then define your list with this model.
-The _AuroraSelectModel_ has two properties, one is _id_, and second is _label_.
+Select2-aurora has an property named _optionList_.
+To create an optionList, you must define a list of _AuroraSelectModel_ objects.
+First of all import _AuroraSelectModel_ in your component,
+then define your list with this model.
+The _AuroraSelectModel_ has two properties, one is _id_, and _label_.
 
 
 ```typescript
@@ -89,7 +93,7 @@ Then you can define _select2-aurora_ in your template.
 
 ## Using select2-aurora in a form
 
-You can use _select2-aurora_ in a form. Here we have an example
+Following is an example of using _select2-aurora_ in a form.
 
 ```typescript
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
@@ -136,7 +140,7 @@ this.formGroup = this.formBuilder.group({
 });
 ```
 
-in template
+in the template
 
 ```html
 <form [formGroup]="formGroup" (ngSubmit)="onSaveForm()">
@@ -155,6 +159,7 @@ in template
 ## API service
 
 You can fill the options list with an API service.
+For this purpose, just write an API that its response is a list with _id_ and _label_ properties.
 
 ```typescript
 apiUrl = 'http://127.0.0.1:8000/view1/';
@@ -168,7 +173,7 @@ apiUrl = 'http://127.0.0.1:8000/view1/';
 </select2-aurora>
 ```
 
-If your API has JWT token, then you can pass your token to this module
+If your API has JWT token, then you can pass through your token to this module
 
 ```typescript
 apiUrl = 'http://127.0.0.1:8000/view1/';
@@ -184,15 +189,8 @@ jwtToken = 'dfsdfe3423i4jfhsdjnvsjhr3h4j23h4j23h4j232j4';
 </select2-aurora>
 ```
 
-If you use both _optionList_ and _apiUrl_ simultaneous, the module just use _apiUrl_.
+If you use both _optionList_ and _apiUrl_ simultaneously, the module will only use _apiUrl_.
 
 ## Source code
 
-The project is open source, and you can access to source code [here](https://github.com/mohammadali66/aurora/tree/master/projects/select2-aurora)
-
-## Legal
-Copyright (C) 2020-2021 Mohammad Ali Khandan
-
-Copyright (C) 2020-2021 AuroraBook
-
-This software is licensed under the MIT License.
+The project is open source and you can access the source code [here](https://github.com/mohammadali66/aurora/tree/master/projects/select2-aurora)

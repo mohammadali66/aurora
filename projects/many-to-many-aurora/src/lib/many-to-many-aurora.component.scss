@@ -1,0 +1,59 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.arrowBtn {
+  background: transparent;
+  font-size: 20px;
+}
+
+.header-tabel {
+  border-radius: 18px 18px 0 0;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.centered-butt {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-st {
+  overflow-x: scroll;
+}
+
+
+/* *************************** scroll *************************************** */
+.scrollbar-aurora{
+  // margin: 10px 5px 3px 5px;
+}
+
+.scrollbar-aurora::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+.scrollbar-aurora::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #fff;
+}
+
+.scrollbar-aurora::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--border-color);
+}
+
+.dropdown-toggle::after {
+  margin: 4px 3px 0 3px;
+  float: right;
+  color: #767676;
+}
+
+.dropdown-toggle {
+  display: inline-block;
+}
